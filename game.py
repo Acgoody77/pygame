@@ -11,7 +11,9 @@ white = (255,255,255)
 red = (255,0,0)
 
 object_width = 120
-
+"""
+game
+"""
 
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('My Game')
@@ -28,7 +30,7 @@ def text_objects(text, font):
     return text_surface, text_surface.get_rect()
 
 def message_display(text):
-    font_text = pygame.font.Font('freesansbold.ttf', 115)
+    font_text = pygame.font.Font('freesansbold.ttf', 50)
     text_surf, text_rect = text_objects(text, font_text)
     text_rect.center = ((display_width/2), (display_height/2))
     gameDisplay.blit(text_surf, text_rect)
@@ -45,7 +47,6 @@ def crash():
 def game_loop():
     x = (display_width * .45)
     y = (display_height * .8)
-
 
     key_left = False
     key_right = False
@@ -71,7 +72,6 @@ def game_loop():
                     key_up = True
                 elif event.key == pygame.K_DOWN:
                     key_down = True
-
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT:
